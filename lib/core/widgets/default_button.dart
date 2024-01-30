@@ -21,7 +21,7 @@ class DefaultButton extends StatelessWidget {
         backgroundColor:const MaterialStatePropertyAll(AppColors.primaryColor)
       ),
     onPressed: onPressed,
-      child:Text(text??"",style: TextStyles.font24WhiteBold,) ,
+      child:Text(text??"",style: TextStyles.font16WhiteBold,) ,
     );
   }
 }
