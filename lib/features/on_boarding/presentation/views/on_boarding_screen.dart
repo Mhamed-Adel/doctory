@@ -1,4 +1,4 @@
-import 'package:doctors_app/features/on_boarding/presentation/widgets/doctor_image.dart';
+import 'package:doctors_app/features/on_boarding/presentation/views/widgets/doctor_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,7 +13,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child:Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 30.h),
+          padding: EdgeInsets.symmetric(horizontal: 24.w,vertical: 30.h),
           child: ListView(
             children:  [
             const  AppLogoAndName(),
