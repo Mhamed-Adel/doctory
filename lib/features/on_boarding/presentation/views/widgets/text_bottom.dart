@@ -1,5 +1,4 @@
 import 'package:doctors_app/core/helpers/extenstion.dart';
-import 'package:doctors_app/core/routing/app_routes.dart';
 import 'package:doctors_app/core/routing/routes.dart';
 import 'package:doctors_app/core/theme/text_styles.dart';
 import 'package:doctors_app/core/widgets/default_button.dart';
