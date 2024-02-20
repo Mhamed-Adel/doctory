@@ -7,9 +7,9 @@ class DioFactory{
 
 DioFactory._();
 
-Dio? _dio;
+static Dio? _dio;
 
-Dio getDio() {
+static Dio getDio() {
   if(_dio == null){
     _dio = Dio();
     _dio!
@@ -25,7 +25,7 @@ Dio getDio() {
 
 }
 
-void prettyDioLogger() {
+static void prettyDioLogger() {
        _dio?.interceptors.add(
     PrettyDioLogger(
        requestBody: true,

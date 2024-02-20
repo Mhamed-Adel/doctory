@@ -1,6 +1,5 @@
 
 import 'package:doctors_app/core/network/api_error_handler.dart';
-import 'package:doctors_app/core/network/errors_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part  'api_result.freezed.dart';
 @freezed
