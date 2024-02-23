@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'widgets/already_have_account_text.dart';
+import 'widgets/donnot_have_account.dart';
 import 'widgets/email_and_pass.dart';
 import 'widgets/terms_conditions_text.dart';
 
