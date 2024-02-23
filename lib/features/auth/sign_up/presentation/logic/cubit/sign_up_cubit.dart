@@ -5,11 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this._repo) : super(const SignUpState.initial());
   final SignUpRepo _repo;
-   TextEditingController nameController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -17,20 +16,26 @@ class SignUpCubit extends Cubit<SignUpState> {
       TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-  doSignUpState() async{
+  doSignUpState() async {
     emit(const SignUpState.loading());
-    var response =await  _repo.signUp(
-      SignupRequestBody(
-        name: nameController.text,
-        email: emailController.text, 
-        password: passwordController.text, 
-        phone: phoneController.text, 
-        passwordConfirmation: passwordConfirmationController.text, 
-        gender: 0,
-      )
-    );
+    var response = await _repo.signUp(SignupRequestBody(
+      name: nameController.text,
+      email: emailController.text,
+      password: passwordController.text,
+      phone: phoneController.text,
+      passwordConfirmation: passwordConfirmationController.text,
+      gender: 0,
+    ));
     response.when(
       success: (data) => emit(SignUpState.success(data)),
-     failure: (error) => emit(SignUpState.failure(error: error.apiErrorModel.message ?? "error")),);
+      failure: (error) => emit(
+          SignUpState.failure(error: error.apiErrorModel.message ?? "error")),
+    );
+  }
+
+  validateAndSignup() {
+    if (formKey.currentState!.validate()) {
+      doSignUpState();
+    }
   }
 }
